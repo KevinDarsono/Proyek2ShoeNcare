@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Kurir extends Model
 {
     use HasFactory;
+
+    protected $table = "kurir";
+
+    protected $guarded = [''];
+
+    public $timestamps = false;
 }

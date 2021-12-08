@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ControllerKaryawan;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.main');
 });
+
+//paket
+Route::get("/dataPaket", [ControllerKaryawan::class, "dataPaket"]);
+Route::get("/addPaket", [ControllerKaryawan::class, "addPaket"]);
+Route::post("/addPaketprocess", [ControllerKaryawan::class, "addPaketprocess"]);
+Route::get("/deletePaket/{id_paket}", [ControllerKaryawan::class, "deletePaket"]);
+Route::get("/editPaket/{id_paket}", [ControllerKaryawan::class, "editPaket"]);
+Route::post("/editPaketprocess", [ControllerKaryawan::class, "editPaketprocess"]);
+
+//Kurir
+Route::get("/dataKurir", [ControllerKaryawan::class, "dataKurir"]);
